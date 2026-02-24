@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrYAX8TsIr0AL2ey2GhYXMemYPqZWlwcjJ_w&s">
-    <title>Vista Azul Roatán | MLS 26-62 | $479,000 | 3BR Hilltop Duplex West End</title>
+    <title>Vista Azul Roatán | MLS 26-62 | $479,000</title>
+    <meta name="description" content="Vista Azul Roatán: A modern $479k hilltop duplex in West End. Features a 2BR main home plus a private income studio, Tier 1 solar with battery backup, and fiber internet. Perfect Caribbean investment near Blue Channel diving.">
     
     <style>
         :root {
@@ -54,12 +55,23 @@
         .price-tag { font-size: 2.5rem; color: var(--azul-bright); font-weight: 800; display: block; margin: 10px 0; }
         .subtitle { color: #555; font-weight: bold; margin-bottom: 30px; display: block; letter-spacing: 1px; }
         
-        .hover-img { color: var(--azul-bright); text-decoration: underline dotted; cursor: help; position: relative; font-weight: bold; }
-        .hover-img .preview {
-            display: none; position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%);
-            width: 300px; height: auto; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.4); z-index: 100; border: 3px solid white;
+        /* UPDATED MOBILE-FRIENDLY HOVER STYLE */
+        .hover-img { 
+            color: var(--azul-bright); 
+            text-decoration: underline dotted; 
+            cursor: pointer; 
+            position: relative; 
+            font-weight: bold;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
         }
-        .hover-img:hover .preview { display: block; }
+        .hover-img .preview {
+            display: none; position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+            width: 280px; height: auto; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.6); 
+            z-index: 2000; border: 3px solid white; pointer-events: none;
+        }
+        /* Desktop Hover + Mobile Tap (Focus) */
+        .hover-img:hover .preview, .hover-img:focus .preview, .hover-img:active .preview { display: block; }
 
         .accordion-container { margin-top: 30px; text-align: left; }
         details {
@@ -101,7 +113,6 @@
         #backToTop.show { opacity: 1; visibility: visible; }
         #backToTop svg { width: 18px; height: 18px; fill: white; }
 
-        /* SEO FOOTER */
         .seo-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; font-size: 0.85rem; color: #777; text-align: left; }
 
         @media (max-width: 768px) {
@@ -114,7 +125,7 @@
         }
         @media (max-width: 480px) {
             .hero-box { height: 280px; } 
-            .hover-img .preview { width: 180px; } 
+            .hover-img .preview { width: 220px; } 
         }
     </style>
 </head>
@@ -146,12 +157,12 @@
                     <div class="acc-content">
                         Designed for island life without compromise. This 2-bedroom, 2.5-bath main residence features:
                         <ul>
-                            <li><strong><span class="hover-img">Master Suite:<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260205195752829030000000-o.jpg" class="preview"></span></strong> <span class="hover-img">Private Sitting Area<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260205200326039669000000-o.jpg" class="preview"></span>, <span class="hover-img">walk-in closet<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260206211210938658000000-o.jpg" class="preview"></span>, and an <strong><span class="hover-img">oversized double shower<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260205195920451325000000-o.jpg" class="preview"></span></strong>.</li>
-                            <li><strong><span class="hover-img">Living Space:<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260205200224607302000000-o.jpg" class="preview"></span></strong> <span class="hover-img">Vaulted ceilings<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260205200711724631000000-o.jpg" class="preview"></span>, <span class="hover-img">open-concept dining<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202546942378000000-o.jpg" class="preview"></span>, and a <span class="hover-img">half bath<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202601603572000000-o.jpg" class="preview"></span> for guests.</li>
-                            <li><strong><span class="hover-img">Kitchen:<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202549095351000000-o.jpg" class="preview"></span></strong> Modern chef's kitchen with <strong><span class="hover-img">granite countertops<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260205200711724631000000-o.jpg" class="preview"></span></strong>, <span class="hover-img">stainless refrigerator, dishwasher, microwave, and disposal<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202544635592000000-o.jpg" class="preview"></span>.</li>
-                            <li><strong><span class="hover-img"> Laundry Lounge: <img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260206214340671384000000-o.jpg" class="preview"></span></strong>Bonus feature as surrounding duplexes can't replicate the room includes comfortable seating, creating a space for relaxing while clothes are washing.</li> 
-                            <li><strong>Outdoor Living:</strong> A large <span class="hover-img">25' x 11' balcony<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202550567270000000-o.jpg" class="preview"></span> with mood lighting plus a <strong><span class="hover-img">360° rooftop deck<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204201516541483000000-o.jpg" class="preview"></span></strong> for <span class="hover-img">Green Flash sunsets<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260206211212360144000000-o.jpg" class="preview"></span>.</li>
-                            <li><strong><span class="hover-img"> Official Location: <img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204220829052023000000-o.jpg" class="preview"></span></strong>The house is located behind <span class="hover-img"> Sunset Villas <img src="https://roatanislandrealestate.com/wp-content/uploads/2023/03/2-BD-2-BA-Villa-6A-in-Sunset-Villas-West-End-3.jpg" class="preview"></span> atop the hill, .25 of a mile or a short, 5-minute walk to the beach.</li> 
+                            <li><strong><span class="hover-img" tabindex="0">Master Suite:<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260205195752829030000000-o.jpg" class="preview"></span></strong> <span class="hover-img" tabindex="0">Private Sitting Area<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260205200326039669000000-o.jpg" class="preview"></span>, <span class="hover-img" tabindex="0">walk-in closet<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260206211210938658000000-o.jpg" class="preview"></span>, and an <strong><span class="hover-img" tabindex="0">oversized double shower<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260205195920451325000000-o.jpg" class="preview"></span></strong>.</li>
+                            <li><strong><span class="hover-img" tabindex="0">Living Space:<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260205200224607302000000-o.jpg" class="preview"></span></strong> <span class="hover-img" tabindex="0">Vaulted ceilings<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260205200711724631000000-o.jpg" class="preview"></span>, <span class="hover-img" tabindex="0">open-concept dining<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202546942378000000-o.jpg" class="preview"></span>, and a <span class="hover-img" tabindex="0">half bath<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202601603572000000-o.jpg" class="preview"></span> for guests.</li>
+                            <li><strong><span class="hover-img" tabindex="0">Kitchen:<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202549095351000000-o.jpg" class="preview"></span></strong> Modern chef's kitchen with <strong><span class="hover-img" tabindex="0">granite countertops<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260205200711724631000000-o.jpg" class="preview"></span></strong>, <span class="hover-img" tabindex="0">stainless refrigerator, dishwasher, microwave, and disposal<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202544635592000000-o.jpg" class="preview"></span>.</li>
+                            <li><strong><span class="hover-img" tabindex="0"> Laundry Lounge: <img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260206214340671384000000-o.jpg" class="preview"></span></strong>Bonus feature as surrounding duplexes can't replicate.</li> 
+                            <li><strong>Outdoor Living:</strong> A large <span class="hover-img" tabindex="0">25' x 11' balcony<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202550567270000000-o.jpg" class="preview"></span> with mood lighting plus a <strong><span class="hover-img" tabindex="0">360° rooftop deck<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204201516541483000000-o.jpg" class="preview"></span></strong> for <span class="hover-img" tabindex="0">Green Flash sunsets<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260206211212360144000000-o.jpg" class="preview"></span>.</li>
+                            <li><strong><span class="hover-img" tabindex="0"> Official Location: <img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204220829052023000000-o.jpg" class="preview"></span></strong>Located behind <span class="hover-img" tabindex="0"> Sunset Villas <img src="https://roatanislandrealestate.com/wp-content/uploads/2023/03/2-BD-2-BA-Villa-6A-in-Sunset-Villas-West-End-3.jpg" class="preview"></span>.</li> 
                         </ul>
                     </div>
                 </details>
@@ -164,14 +175,9 @@
                     <div class="acc-content">
                         Perfect for long-term tenants, high-yield vacation rentals, or extended family.
                         <ul>
-                            <li><strong><span class="hover-img">Layout:<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202557822783000000-o.jpg" class="preview"></span></strong> Fully independent <span class="hover-img">1-Bedroom<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202557020011000000-o.jpg" class="preview"></span>, <span class="hover-img">1-Bathroom<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260205200411966709000000-o.jpg" class="preview"></span>, studio with <span class="hover-img">Full Kitchen<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202558555312000000-o.jpg" class="preview"></span> and living space.</li>
-                            <li><strong>Amenities:</strong> <span class="hover-img">Private deck, <img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202555608452000000-o.jpg" class="preview"></span><span class="hover-img">dedicated laundry <img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260206215107991149000000-o.jpg" class="preview"></span>, and <strong><span class="hover-img">separate private entrance<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260205200254764556000000-o.jpg" class="preview"></span></strong>.</li>
-                            <li><strong>Connectivity:</strong> Own Wi-Fi network with dedicated fiber access and VPN security.</li>
+                            <li><strong><span class="hover-img" tabindex="0">Layout:<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202557822783000000-o.jpg" class="preview"></span></strong> Fully independent <span class="hover-img" tabindex="0">1-Bedroom<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202557020011000000-o.jpg" class="preview"></span>, <span class="hover-img" tabindex="0">1-Bathroom<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260205200411966709000000-o.jpg" class="preview"></span> studio with <span class="hover-img" tabindex="0">Full Kitchen<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202558555312000000-o.jpg" class="preview"></span>.</li>
+                            <li><strong>Amenities:</strong> <span class="hover-img" tabindex="0">Private deck<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202555608452000000-o.jpg" class="preview"></span>, <span class="hover-img" tabindex="0">dedicated laundry <img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260206215107991149000000-o.jpg" class="preview"></span>, and <strong><span class="hover-img" tabindex="0">separate private entrance<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260205200254764556000000-o.jpg" class="preview"></span></strong>.</li>
                         </ul>
-                        <div class="btn-container">
-                            <a href="https://my.flexmls.com/ASRealEstate/search/shared_links/DPFVK/listings/20260204164718198105000000" class="btn">View Full MLS Listing</a>
-                            <a href="mailto:dreampropertiesroatan@gmail.com?subject=Inquiry: Vista Azul Studio" class="btn">Contact Agent</a>
-                        </div>
                     </div>
                 </details>
 
@@ -181,17 +187,10 @@
                         Off-Grid Reliability & Tech
                     </summary>
                     <div class="acc-content">
-                        True peace of mind with heavy-duty infrastructure:
                         <ul>
-                            <li>
-                                <span class="hover-img">High-Capacity SOLAR System
-                                    <img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202559885310000000-o.jpg" class="preview" alt="Solar Roof">
-                                </span> with full battery backup for uninterrupted power.
-                            </li>
-                            <li><strong>WATER:</strong> 1750L water storage system with dedicated backup pump.</li>
-                            <li><strong>INTERNET:</strong> Fiber-optic, <strong><span class="hover-img">Google Mesh (AC1200)<img src="https://m.media-amazon.com/images/I/41GuFP3P6cL.jpg" class="preview"></span></strong>, and VPN router for secure remote work.</li>
-                            <li><strong>STORAGE:</strong> Secure exterior storage plus internal walk-in under-stair storage.</li>
-                            <li><strong>EXTRAS:</strong> Wi-Fi security cameras, sensor lighting, and low-maintenance landscaping.</li>
+                            <li><span class="hover-img" tabindex="0">High-Capacity SOLAR System<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202559885310000000-o.jpg" class="preview"></span> with battery backup.</li>
+                            <li><strong>WATER:</strong> 1750L water storage system.</li>
+                            <li><strong>INTERNET:</strong> Fiber-optic with <strong><span class="hover-img" tabindex="0">Google Mesh (AC1200)<img src="https://m.media-amazon.com/images/I/41GuFP3P6cL.jpg" class="preview"></span></strong>.</li>
                         </ul>
                     </div>
                 </details>
@@ -209,7 +208,7 @@
                         Diving & Snorkeling
                     </summary>
                     <div class="acc-content">
-                        Located minutes from the world-famous <strong><span class="hover-img">Blue Chanel<img src="https://roatansplashinn.com/wp-content/uploads/2015/10/18341701a720c488a216e437ab02edc7.jpg" class="preview"></span></strong> and <strong><span class="hover-img">West Bay Beach<img src="https://static.wixstatic.com/media/479630_4f01817b5b50461d891f69c9fd4b2b05~mv2.png/v1/fill/w_723,h_478,al_c/479630_4f01817b5b50461d891f69c9fd4b2b05~mv2.png" class="preview"></span></strong>. Explore the <span class="hover-img">Mesoamerican Reef<img src="https://marfund.org/en/wp-content/uploads/2017/06/full-marfund-map.png" class="preview"></span>, <strong><span class="hover-img">Starfish Alley<img src="https://puertaazulroatan.com/wp-content/uploads/2024/05/Puerta-Azul-Boutique-Hotel-Roatan-Hidden-Gems.jpg" class="preview"></span></strong>, and iconic <strong><span class="hover-img">Shipwrecks<img src="https://images.squarespace-cdn.com/content/v1/5596959de4b0f75fd296dbe4/1716912105030-A301SJ2M1HCSBQV3C24X/wreck-specialty-7.jpg" class="preview"></span></strong>. <strong><span class="hover-img">150+ Dive Sites<img src="https://roatansplashinn.com/wp-content/uploads/2019/05/map-large.jpg" class="preview"></span></strong> are accessible within minutes of your door.
+                        Located minutes from the world-famous <strong><span class="hover-img" tabindex="0">Blue Chanel<img src="https://roatansplashinn.com/wp-content/uploads/2015/10/18341701a720c488a216e437ab02edc7.jpg" class="preview"></span></strong> and <strong><span class="hover-img" tabindex="0">West Bay Beach<img src="https://static.wixstatic.com/media/479630_4f01817b5b50461d891f69c9fd4b2b05~mv2.png/v1/fill/w_723,h_478,al_c/479630_4f01817b5b50461d891f69c9fd4b2b05~mv2.png" class="preview"></span></strong>.
                     </div>
                 </details>
 
@@ -219,7 +218,7 @@
                         Wildlife & Tourism
                     </summary>
                     <div class="acc-content">
-                        A prime location for tourism: <strong><span class="hover-img">Daniel Johnson's Sloth Hangout<img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/07/04/7c/4b.jpg" class="preview"></span></strong>, <strong><span class="hover-img">Gumbalimba Park<img src="https://images.squarespace-cdn.com/content/v1/5900c898d2b8571036307517/1573604009312-RO5FBUBRDMGUHSQXCSK1/IMG_0269.JPG" class="preview"></span></strong>, <strong><span class="hover-img">South Shore Ziplining<img src="https://discoverroatan.net/wp-content/uploads/2018/05/South-Shore-Zip-N-Dip-Roatan-2048x2048.jpg" class="preview"></span></strong>, <span class="hover-img">Roatan Island Brewery<img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/10/29/87/59.jpg" class="preview"></span>, and <strong><span class="hover-img">Oakridge Mangrove Tours<img src="https://www.pelago.com/img/products/HN-Honduras/roatan-mangrove-tunnel-culture-tour-on-a-water-taxi-tuktuk/65c81d3b-2e9c-432b-805f-a46f978c0236_roatan-mangrove-tunnel-culture-tour-on-a-water-taxi-tuktuk.jpg" class="preview"></span></strong>.
+                        A prime location for tourism: <strong><span class="hover-img" tabindex="0">Daniel Johnson's Sloth Hangout<img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/07/04/7c/4b.jpg" class="preview"></span></strong> and <strong><span class="hover-img" tabindex="0">Gumbalimba Park<img src="https://images.squarespace-cdn.com/content/v1/5900c898d2b8571036307517/1573604009312-RO5FBUBRDMGUHSQXCSK1/IMG_0269.JPG" class="preview"></span></strong>.
                     </div>
                 </details>
             </div>
