@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrYAX8TsIr0AL2ey2GhYXMemYPqZWlwcjJ_w&s">
+    <title>Vista Azul Roatán | MLS 26-62 | $479,000 | 3BR Hilltop Duplex West End</title>
+    
+    <style>
+        :root {
+            --azul-dark: #0a192f;
+            --azul-bright: #007bff;
+            --azul-hover: #00d4ff;
+            --glass: rgba(255, 255, 255, 0.96);
+        }
+        body, html {
+            margin: 0; padding: 0; min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background-image: url('https://images.squarespace-cdn.com/content/v1/5e59cc476fe14d05ec2257fe/1585117603915-T9SL3B84ZGMQJ3B0BZSD/4A35E7AF-D1F0-4250-8710-4F26F5EE9B15.JPG');
+            background-size: cover; background-position: center;
+            background-attachment: fixed; background-repeat: no-repeat;
+        }
+        body::before {
+            content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.3); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); z-index: -1;
+        }
+        .container { display: flex; justify-content: center; padding: 20px; box-sizing: border-box; }
+        .card {
+            width: 100%; max-width: 900px;
+            background: var(--glass); border-radius: 16px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5); overflow: hidden; margin: 20px 0;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .hero-box {
+            width: 100%; height: 500px; position: relative; overflow: hidden;
+            border-bottom: 6px solid var(--azul-bright); background: #000;
+        }
+        .hero-box img {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover; opacity: 0;
+            animation: heroScroll 12s infinite;
+        }
+        .hero-box img:nth-child(1) { animation-delay: 0s; }
+        .hero-box img:nth-child(2) { animation-delay: 3s; }
+        .hero-box img:nth-child(3) { animation-delay: 6s; }
+        .hero-box img:nth-child(4) { animation-delay: 9s; }
+
+        @keyframes heroScroll {
+            0% { opacity: 0; } 5% { opacity: 1; } 25% { opacity: 1; } 30% { opacity: 0; } 100% { opacity: 0; }
+        }
+
+        .content { padding: 40px 6%; text-align: center; }
+        h1 { color: var(--azul-dark); font-size: calc(1.5rem + 1vw); margin: 0; text-transform: uppercase; }
+        .price-tag { font-size: 2.5rem; color: var(--azul-bright); font-weight: 800; display: block; margin: 10px 0; }
+        .subtitle { color: #555; font-weight: bold; margin-bottom: 30px; display: block; letter-spacing: 1px; }
+        
+        .hover-img { color: var(--azul-bright); text-decoration: underline dotted; cursor: help; position: relative; font-weight: bold; }
+        .hover-img .preview {
+            display: none; position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%);
+            width: 300px; height: auto; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.4); z-index: 100; border: 3px solid white;
+        }
+        .hover-img:hover .preview { display: block; }
+
+        .accordion-container { margin-top: 30px; text-align: left; }
+        details {
+            background: rgba(255, 255, 255, 0.9); margin-bottom: 20px; border-radius: 12px;
+            border: 1px solid rgba(0,0,0,0.05); border-left: 6px solid var(--azul-dark); transition: all 0.4s ease;
+        }
+        details:hover { border-left: 10px solid var(--azul-hover); transform: translateX(5px); }
+        details[open] { border-left: 10px solid var(--azul-bright); background: #fff; }
+        summary { padding: 20px; font-weight: bold; font-size: 1.2rem; color: var(--azul-dark); cursor: pointer; display: flex; align-items: center; list-style: none; }
+        summary::-webkit-details-marker { display: none; }
+        summary svg { margin-right: 15px; fill: var(--azul-bright); width: 26px; height: 26px; }
+
+        .acc-content { padding: 0 30px 30px 72px; line-height: 1.8; color: #333; }
+        .acc-content ul { margin: 10px 0; padding-left: 20px; }
+        .acc-content li { margin-bottom: 10px; }
+
+        .btn-container { margin: 25px 0; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; width: 100%; }
+        .btn {
+            background: linear-gradient(135deg, var(--azul-bright), #0056b3);
+            color: white !important; padding: 14px 20px; text-decoration: none; font-weight: bold;
+            border-radius: 50px; font-size: 0.95rem; display: inline-flex; align-items: center; justify-content: center;
+            transition: 0.3s; box-shadow: 0 6px 12px rgba(0, 123, 255, 0.2); text-transform: uppercase;
+            letter-spacing: 0.5px; min-width: 220px; box-sizing: border-box;
+        }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 18px rgba(0, 123, 255, 0.4); }
+
+        .separator {
+            padding: 20px; margin: 40px 0 20px; font-weight: 800; color: #888;
+            text-transform: uppercase; letter-spacing: 3px; border-bottom: 2px solid #ddd;
+            text-align: center; font-size: 1rem; clear: both;
+        } 
+        
+        #backToTop {
+            position: fixed; bottom: 20px; right: 15px; width: 35px; height: 35px;
+            background: rgba(0, 123, 255, 0.6); color: white; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            z-index: 1000; opacity: 0; visibility: hidden; transition: 0.3s; border: none; cursor: pointer;
+        }
+        #backToTop.show { opacity: 1; visibility: visible; }
+        #backToTop svg { width: 18px; height: 18px; fill: white; }
+
+        /* SEO FOOTER */
+        .seo-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; font-size: 0.85rem; color: #777; text-align: left; }
+
+        @media (max-width: 768px) {
+            .container { padding: 0; }
+            .card { margin: 0; border-radius: 0; max-width: 100%; border: none; }
+            .hero-box { height: 350px; }
+            .acc-content { padding-left: 40px; } 
+            .btn-container { flex-direction: column; align-items: center; gap: 12px; }
+            .btn { width: 100%; max-width: 320px; min-width: unset; }
+        }
+        @media (max-width: 480px) {
+            .hero-box { height: 280px; } 
+            .hover-img .preview { width: 180px; } 
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <div class="hero-box">
+            <img src="https://cdn.resize.sparkplatform.com/rra/640x480/true/20260204201515545885000000-o.jpg" alt="Vista Azul Exterior">
+            <img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260206211211863492000000-o.jpg" alt="Sunset Balcony">
+            <img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202549095351000000-o.jpg" alt="Kitchen">
+            <img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260206215312335277000000-o.jpg" alt="Solar Tech">
+        </div>
+        <div class="content">
+            <h1>Vista Azul at West End</h1>
+            <span class="price-tag">$479,000</span>
+            <span class="subtitle">MLS 26-62 • 3 BEDS • 3.5 BATHS • 2,573 SQFT</span>
+            
+            <div class="btn-container">
+                <a href="https://my.flexmls.com/ASRealEstate/search/shared_links/DPFVK/listings/20260204164718198105000000" class="btn">VIEW FULL MLS LISTING</a>
+                <a href="mailto:dreampropertiesroatan@gmail.com?subject=Inquiry: Vista Azul Roatan" class="btn">CONTACT AGENT</a>
+            </div>
+
+            <div class="accordion-container">
+                <details name="prop" open>
+                    <summary>
+                        <svg viewBox="0 0 24 24"><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"/></svg>
+                        Main Home: Hilltop Luxury
+                    </summary>
+                    <div class="acc-content">
+                        Designed for island life without compromise. This 2-bedroom, 2.5-bath main residence features:
+                        <ul>
+                            <li><strong><span class="hover-img">Master Suite:<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260205195752829030000000-o.jpg" class="preview"></span></strong> <span class="hover-img">Private Sitting Area<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260205200326039669000000-o.jpg" class="preview"></span>, <span class="hover-img">walk-in closet<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260206211210938658000000-o.jpg" class="preview"></span>, and an <strong><span class="hover-img">oversized double shower<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260205195920451325000000-o.jpg" class="preview"></span></strong>.</li>
+                            <li><strong><span class="hover-img">Living Space:<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260205200224607302000000-o.jpg" class="preview"></span></strong> <span class="hover-img">Vaulted ceilings<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260205200711724631000000-o.jpg" class="preview"></span>, <span class="hover-img">open-concept dining<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202546942378000000-o.jpg" class="preview"></span>, and a <span class="hover-img">half bath<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202601603572000000-o.jpg" class="preview"></span> for guests.</li>
+                            <li><strong><span class="hover-img">Kitchen:<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202549095351000000-o.jpg" class="preview"></span></strong> Modern chef's kitchen with <strong><span class="hover-img">granite countertops<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260205200711724631000000-o.jpg" class="preview"></span></strong>, <span class="hover-img">stainless refrigerator, dishwasher, microwave, and disposal<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202544635592000000-o.jpg" class="preview"></span>.</li>
+                            <li><strong><span class="hover-img"> Laundry Lounge: <img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260206214340671384000000-o.jpg" class="preview"></span></strong>Bonus feature as surrounding duplexes can't replicate the room includes comfortable seating, creating a space for relaxing while clothes are washing.</li> 
+                            <li><strong>Outdoor Living:</strong> A large <span class="hover-img">25' x 11' balcony<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202550567270000000-o.jpg" class="preview"></span> with mood lighting plus a <strong><span class="hover-img">360° rooftop deck<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204201516541483000000-o.jpg" class="preview"></span></strong> for <span class="hover-img">Green Flash sunsets<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260206211212360144000000-o.jpg" class="preview"></span>.</li>
+                            <li><strong><span class="hover-img"> Official Location: <img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204220829052023000000-o.jpg" class="preview"></span></strong>The house is located behind <span class="hover-img"> Sunset Villas <img src="https://roatanislandrealestate.com/wp-content/uploads/2023/03/2-BD-2-BA-Villa-6A-in-Sunset-Villas-West-End-3.jpg" class="preview"></span> atop the hill, .25 of a mile or a short, 5-minute walk to the beach.</li> 
+                        </ul>
+                    </div>
+                </details>
+
+                <details name="prop">
+                    <summary>
+                        <svg viewBox="0 0 24 24"><path d="M4,10V21h6V15h4v6h6V10L12,3L4,10z"/></svg>
+                        Private Income Studio
+                    </summary>
+                    <div class="acc-content">
+                        Perfect for long-term tenants, high-yield vacation rentals, or extended family.
+                        <ul>
+                            <li><strong><span class="hover-img">Layout:<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202557822783000000-o.jpg" class="preview"></span></strong> Fully independent <span class="hover-img">1-Bedroom<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202557020011000000-o.jpg" class="preview"></span>, <span class="hover-img">1-Bathroom<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260205200411966709000000-o.jpg" class="preview"></span>, studio with <span class="hover-img">Full Kitchen<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202558555312000000-o.jpg" class="preview"></span> and living space.</li>
+                            <li><strong>Amenities:</strong> <span class="hover-img">Private deck, <img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202555608452000000-o.jpg" class="preview"></span><span class="hover-img">dedicated laundry <img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260206215107991149000000-o.jpg" class="preview"></span>, and <strong><span class="hover-img">separate private entrance<img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260205200254764556000000-o.jpg" class="preview"></span></strong>.</li>
+                            <li><strong>Connectivity:</strong> Own Wi-Fi network with dedicated fiber access and VPN security.</li>
+                        </ul>
+                        <div class="btn-container">
+                            <a href="https://my.flexmls.com/ASRealEstate/search/shared_links/DPFVK/listings/20260204164718198105000000" class="btn">View Full MLS Listing</a>
+                            <a href="mailto:dreampropertiesroatan@gmail.com?subject=Inquiry: Vista Azul Studio" class="btn">Contact Agent</a>
+                        </div>
+                    </div>
+                </details>
+
+                <details name="prop">
+                    <summary>
+                        <svg viewBox="0 0 24 24"><path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4z"/></svg>
+                        Off-Grid Reliability & Tech
+                    </summary>
+                    <div class="acc-content">
+                        True peace of mind with heavy-duty infrastructure:
+                        <ul>
+                            <li>
+                                <span class="hover-img">High-Capacity SOLAR System
+                                    <img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202559885310000000-o.jpg" class="preview" alt="Solar Roof">
+                                </span> with full battery backup for uninterrupted power.
+                            </li>
+                            <li><strong>WATER:</strong> 1750L water storage system with dedicated backup pump.</li>
+                            <li><strong>INTERNET:</strong> Fiber-optic, <strong><span class="hover-img">Google Mesh (AC1200)<img src="https://m.media-amazon.com/images/I/41GuFP3P6cL.jpg" class="preview"></span></strong>, and VPN router for secure remote work.</li>
+                            <li><strong>STORAGE:</strong> Secure exterior storage plus internal walk-in under-stair storage.</li>
+                            <li><strong>EXTRAS:</strong> Wi-Fi security cameras, sensor lighting, and low-maintenance landscaping.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <div class="btn-container">
+                    <a href="https://my.flexmls.com/ASRealEstate/search/shared_links/DPFVK/listings/20260204164718198105000000" class="btn">VIEW FULL MLS LISTING</a>
+                    <a href="mailto:dreampropertiesroatan@gmail.com?subject=Inquiry: Vista Azul Roatan" class="btn">CONTACT AGENT</a>
+                </div>
+
+                <div class="separator">++ Lifestyle & Landmarks ++</div>
+
+                <details name="prop">
+                    <summary>
+                        <svg viewBox="0 0 24 24"><path d="M12,2C9,2,4,4,4,9V11C4,12.1 4.9,13 6,13H7V16H17V13H18C19.1,13 20,12.1 20,11V9C20,4,15,2,12,2M12,4C14.1,4 18,5.5 18,9V11H14V10H10V11H6V9C6,5.5 9.9,4 12,4M10,13V15H8V13H10M16,13V15H14V13H16Z"/></svg>
+                        Diving & Snorkeling
+                    </summary>
+                    <div class="acc-content">
+                        Located minutes from the world-famous <strong><span class="hover-img">Blue Chanel<img src="https://roatansplashinn.com/wp-content/uploads/2015/10/18341701a720c488a216e437ab02edc7.jpg" class="preview"></span></strong> and <strong><span class="hover-img">West Bay Beach<img src="https://static.wixstatic.com/media/479630_4f01817b5b50461d891f69c9fd4b2b05~mv2.png/v1/fill/w_723,h_478,al_c/479630_4f01817b5b50461d891f69c9fd4b2b05~mv2.png" class="preview"></span></strong>. Explore the <span class="hover-img">Mesoamerican Reef<img src="https://marfund.org/en/wp-content/uploads/2017/06/full-marfund-map.png" class="preview"></span>, <strong><span class="hover-img">Starfish Alley<img src="https://puertaazulroatan.com/wp-content/uploads/2024/05/Puerta-Azul-Boutique-Hotel-Roatan-Hidden-Gems.jpg" class="preview"></span></strong>, and iconic <strong><span class="hover-img">Shipwrecks<img src="https://images.squarespace-cdn.com/content/v1/5596959de4b0f75fd296dbe4/1716912105030-A301SJ2M1HCSBQV3C24X/wreck-specialty-7.jpg" class="preview"></span></strong>. <strong><span class="hover-img">150+ Dive Sites<img src="https://roatansplashinn.com/wp-content/uploads/2019/05/map-large.jpg" class="preview"></span></strong> are accessible within minutes of your door.
+                    </div>
+                </details>
+
+                <details name="prop">
+                    <summary>
+                        <svg viewBox="0 0 24 24"><path d="M23,12L19,8V11H10V13H19V16L23,12M1,12L5,16V13H14V11H5V8L1,12Z"/></svg>
+                        Wildlife & Tourism
+                    </summary>
+                    <div class="acc-content">
+                        A prime location for tourism: <strong><span class="hover-img">Daniel Johnson's Sloth Hangout<img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/07/04/7c/4b.jpg" class="preview"></span></strong>, <strong><span class="hover-img">Gumbalimba Park<img src="https://images.squarespace-cdn.com/content/v1/5900c898d2b8571036307517/1573604009312-RO5FBUBRDMGUHSQXCSK1/IMG_0269.JPG" class="preview"></span></strong>, <strong><span class="hover-img">South Shore Ziplining<img src="https://discoverroatan.net/wp-content/uploads/2018/05/South-Shore-Zip-N-Dip-Roatan-2048x2048.jpg" class="preview"></span></strong>, <span class="hover-img">Roatan Island Brewery<img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/10/29/87/59.jpg" class="preview"></span>, and <strong><span class="hover-img">Oakridge Mangrove Tours<img src="https://www.pelago.com/img/products/HN-Honduras/roatan-mangrove-tunnel-culture-tour-on-a-water-taxi-tuktuk/65c81d3b-2e9c-432b-805f-a46f978c0236_roatan-mangrove-tunnel-culture-tour-on-a-water-taxi-tuktuk.jpg" class="preview"></span></strong>.
+                    </div>
+                </details>
+            </div>
+
+            <div class="btn-container">
+                <a href="https://my.flexmls.com/ASRealEstate/search/shared_links/DPFVK/listings/20260204164718198105000000" class="btn">VIEW FULL MLS LISTING</a>
+                <a href="mailto:dreampropertiesroatan@gmail.com?subject=Inquiry: Vista Azul Roatan" class="btn">CONTACT AGENT</a>
+            </div>
+
+            <div class="seo-footer">
+                <p><strong>Property Search Keywords:</strong> This modern hilltop <strong>West End Roatán home</strong> is a prime <strong>Caribbean investment</strong>. Located near the <strong>Blue Channel dive site</strong> and <strong>West Bay Beach</strong>, it offers easy access to the <strong>Mesoamerican Barrier Reef</strong>. Ideal for those seeking <strong>Roatán real estate</strong> with <strong>Tier 1 solar power</strong>, <strong>Huawei battery backup</strong>, and <strong>rental income</strong> potential near <strong>Gumbalimba Park</strong> and <strong>South Shore Zipline</strong>.</p>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<button id="backToTop" onclick="scrollToTop()" title="Go to top">
+    <svg viewBox="0 0 24 24"><path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z"/></svg>
+</button>
+
+<script>
+    const backToTopButton = document.getElementById("backToTop");
+    window.onscroll = function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            backToTopButton.classList.add("show");
+        } else {
+            backToTopButton.classList.remove("show");
+        }
+    };
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+</body>
+</html>
