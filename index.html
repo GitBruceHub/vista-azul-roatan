@@ -152,50 +152,65 @@
         #backToTop svg { width: 18px; height: 18px; fill: white; }
 
         .seo-footer { margin-top: 0px; padding-top: 2px; border-top: 1px solid #eee; font-size: 0.85rem; color: #fff; text-align: left; background-color:#191970;}
+    
+        /* HAMBURGER MENU */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--navy);
+        }
+
+        @media (max-width: 1024px) {
+            .content-wrapper { width: 100%; margin: 0; box-shadow: none; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background: var(--sky);
+                flex-direction: column;
+                width: 200px;
+                padding: 15px;
+                display: none;
+            }
+
+            .nav-links a {
+                margin: 10px 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-overlay {
+                width: 95%;
+            }
+
+            .hero-overlay h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero-overlay p {
+                font-size: 0.9rem;
+            }
+        }
+
     </style>
-
-    <!-- Enhanced SEO Meta -->
-    <meta name="geo.region" content="HN-IB">
-    <meta name="geo.placename" content="West End, Roatán, Honduras">
-    <meta name="geo.position" content="16.305; -86.590">
-    <meta name="ICBM" content="16.305, -86.590">
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SingleFamilyResidence",
-      "name": "Vista Azul Roatán",
-      "description": "Luxury hilltop ocean-view duplex in West End, Roatán featuring solar power, fiber internet, and income-generating studio apartment.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "West End",
-        "addressRegion": "Bay Islands",
-        "addressCountry": "HN"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 16.305,
-        "longitude": -86.590
-      },
-      "numberOfRooms": 3,
-      "numberOfBathroomsTotal": 3.5,
-      "floorSize": {
-        "@type": "QuantitativeValue",
-        "value": 2500,
-        "unitCode": "FTK"
-      },
-      "image": "https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204201515545885000000-o.jpg",
-      "offers": {
-        "@type": "Offer",
-        "price": "479000",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://gitbrucehub.github.io/vista-azul-roatan/"
-      }
-    }
-    </script>
-
 </head>
 
 <body>
@@ -207,7 +222,7 @@
             <img src="https://www.clker.com/cliparts/e/p/y/2/N/G/bluehouse-hi.png" alt="Logo">
             VISTA AZUL ROATÁN
         </div>
-        <div class="nav-links">
+        <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div><div class="nav-links">
             <a href="#living">Living</a> <a href="#primary">Primary</a> <a href="#guest">Guest</a>
             <a href="#outdoor">Outdoor</a> <a href="#studio">Studio</a> <a href="#tech">Tech</a> <a href="#aerials">Aerials</a>   <a href="#POI">POI</a>
         </div>
@@ -488,5 +503,12 @@
     </div>
 
 </div>
+
+<script>
+function toggleMenu() {
+    document.querySelector('.nav-links').classList.toggle('active');
+}
+</script>
+
 </body>
 </html>
