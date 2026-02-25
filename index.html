@@ -32,185 +32,238 @@
     <meta name="twitter:image" content="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204201515545885000000-o.jpg">
 
     <style>
-        :root {
-            --navy: #191970;
-            --sky: #4bc6ff;
-            --white: #ffffff;
-            --glass: rgba(255, 255, 255, 0.9);
-        }
+    :root {
+      --navy: #191970;
+      --sky: #4bc6ff;
+      --white: #ffffff;
+      --glass: rgba(255, 255, 255, 0.9);
+    }
 
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin: 0;
-            line-height: 1.6;
-            color: var(--navy);
-            background-image: url('https://images.squarespace-cdn.com/content/v1/5e59cc476fe14d05ec2257fe/1585117603915-T9SL3B84ZGMQJ3B0BZSD/4A35E7AF-D1F0-4250-8710-4F26F5EE9B15.JPG');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            scroll-behavior: smooth;
-        }
+    * { box-sizing: border-box; }
 
-        /* CONTENT WRAPPER - THE 80% CONTROLLER */
-        .content-wrapper {
-            width: 80%;
-            margin: 0 auto;
-            box-shadow: 0 0 50px rgba(0,0,0,0.3);
-            background: var(--white);
-        }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      color: var(--navy);
+      background-image: url('https://images.squarespace-cdn.com/content/v1/5e59cc476fe14d05ec2257fe/1585117603915-T9SL3B84ZGMQJ3B0BZSD/4A35E7AF-D1F0-4250-8710-4F26F5EE9B15.JPG');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      scroll-behavior: smooth;
+    }
 
-        /* NAVIGATION */
-        .nav-bar {
-            position: sticky;
-            top: 0;
-            background: var(--sky);
-            color: var(--navy);
-            padding: 10px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            border-bottom: 2px solid var(--navy);
-        }
-        .nav-logo { display: flex; align-items: center; font-weight: bold; letter-spacing: 1px; }
-        .nav-logo img { height: 35px; margin-right: 10px; }
-        .nav-links a { color: var(--navy); text-decoration: none; margin-left: 15px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; }
+    /* CONTENT WRAPPER */
+    .content-wrapper {
+      width: 80%;
+      margin: 0 auto;
+      box-shadow: 0 0 50px rgba(0,0,0,0.3);
+      background: var(--white);
+    }
 
-        /* HERO SECTION WITH OVERLAY TITLE */
-        .hero-container { position: relative; width: 100%; height: 75vh; overflow: hidden; }
-        .hero-container img { width: 100%; height: 100%; object-fit: cover; }
+    /* NAVIGATION */
+    .nav-bar {
+      position: sticky;
+      top: 0;
+      background: var(--sky);
+      color: var(--navy);
+      padding: 10px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      border-bottom: 2px solid var(--navy);
+      gap: 12px;
+      /* Needed for the absolute-positioned mobile menu */
+      position: sticky;
+      position: relative;
+    }
 
-        /* Fix: remove fragile inline positioning hacks, let CSS manage spacing */
-        .hero-overlay {
-            position: absolute;
-            top: 12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--glass);
-            padding: 10px 16px;
-            text-align: center;
-            border-radius: 8px;
-            border-bottom: 5px solid var(--sky);
-            width: 50%;
-        }
-        .hero-overlay h1 { margin: 0; font-size: 2.5rem; color: var(--navy); line-height: 1.05; }
-        .hero-overlay p { margin: 6px 0 0; font-size: 1.2rem; font-weight: bold; line-height: 1.2; }
+    .nav-logo { display: flex; align-items: center; font-weight: bold; letter-spacing: 1px; }
+    .nav-logo img { height: 35px; margin-right: 10px; }
 
-        /* SECTION STYLING */
-        .section { padding: 60px 5%; border-bottom: 1px solid #eee; }
-        .section-alt { background: #f0faff; }
-        h2 { border-left: 8px solid var(--sky); padding-left: 15px; font-size: 2rem; color: var(--navy); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .nav-links a {
+      color: var(--navy);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
 
-        /* GALLERY */
-        .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; margin: 25px 0; }
-        .gallery-item { border: 1px solid #ddd; padding: 5px; border-radius: 4px; background: white; transition: 0.3s; }
-        .gallery-item:hover { transform: scale(1.02); border-color: var(--sky); }
-        .gallery img { width: 100%; height: 220px; object-fit: cover; cursor: pointer; display: block; }
-        .caption { font-size: 0.75rem; font-weight: bold; color: var(--navy); padding: 8px 5px; text-align: center; }
+    /* HAMBURGER (hidden on desktop) */
+    .hamburger {
+      display: none;
+      width: 42px;
+      height: 36px;
+      border: 2px solid var(--navy);
+      border-radius: 10px;
+      padding: 8px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+      background: rgba(255,255,255,0.35);
+      flex: 0 0 auto;
+    }
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: var(--navy);
+      border-radius: 2px;
+    }
 
-        /* FEATURE LISTS */
-        .feature-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0; }
-        .feature-item { background: #fff; padding: 15px; border-radius: 8px; border-left: 4px solid var(--navy); box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+    /* HERO */
+    .hero-container { position: relative; width: 100%; height: 75vh; overflow: hidden; }
+    .hero-container img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* LIGHTBOX */
-        #lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(25, 25, 112, 0.95); display: none; align-items: center; justify-content: center; z-index: 2000; }
-        #lightbox img { max-width: 90%; max-height: 80%; border: 4px solid var(--sky); }
+    .hero-overlay {
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--glass);
+      padding: 10px 16px;
+      text-align: center;
+      border-radius: 8px;
+      border-bottom: 5px solid var(--sky);
+      width: 50%;
+    }
+    .hero-overlay h1 { margin: 0; font-size: 2.5rem; color: var(--navy); line-height: 1.05; }
+    .hero-overlay p { margin: 6px 0 0; font-size: 1.2rem; font-weight: bold; line-height: 1.2; }
 
-        /* MEDIA QUERIES FOR PHONES & TABLETS */
-        @media (max-width: 1024px) {
-            .content-wrapper { width: 100%; margin: 0; box-shadow: none; }
-            .hero-overlay { width: 85%; }
-            body { background-attachment: scroll; }
-        }
+    /* SECTIONS */
+    .section { padding: 60px 5%; border-bottom: 1px solid #eee; }
+    .section-alt { background: #f0faff; }
+    h2 { border-left: 8px solid var(--sky); padding-left: 15px; font-size: 2rem; color: var(--navy); }
 
-        @media (max-width: 768px) {
-            .feature-list { grid-template-columns: 1fr; }
-            .nav-links { display: none; } /* Hide text links on mobile for space */
-            .hero-overlay h1 { font-size: 1.8rem; }
-            .hero-overlay p { font-size: 1rem; }
-            .section { padding: 40px 5%; }
-        }
+    /* GALLERY */
+    .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; margin: 25px 0; }
+    .gallery-item { border: 1px solid #ddd; padding: 5px; border-radius: 4px; background: white; transition: 0.3s; }
+    .gallery-item:hover { transform: scale(1.02); border-color: var(--sky); }
+    .gallery img { width: 100%; height: 220px; object-fit: cover; cursor: pointer; display: block; }
+    .caption { font-size: 0.75rem; font-weight: bold; color: var(--navy); padding: 8px 5px; text-align: center; }
 
-        .btn-container { margin: 25px 0; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; width: 100%; }
-        .btn {
-            background-color:  #0056b3;
-            color: white !important; padding: 14px 20px; text-decoration: none; font-weight: bold;
-            border-radius: 50px; font-size: 0.95rem; display: inline-flex; align-items: center; justify-content: center;
-            transition: 0.3s; box-shadow: 0 6px 12px rgba(0, 123, 255, 0.2); text-transform: uppercase;
-            letter-spacing: 0.5px; min-width: 220px; box-sizing: border-box;
-        }
-        .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 18px rgba(0, 123, 255, 0.4); }
+    /* FEATURE LISTS */
+    .feature-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0; }
+    .feature-item { background: #fff; padding: 15px; border-radius: 8px; border-left: 4px solid var(--navy); box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
 
-        #backToTop {
-            position: fixed; bottom: 20px; right: 15px; width: 35px; height: 35px;
-            background: rgba(0, 123, 255, 0.6); color: white; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            z-index: 1000; opacity: 0; visibility: hidden; transition: 0.3s; border: none; cursor: pointer;
-        }
-        #backToTop.show { opacity: 1; visibility: visible; }
-        #backToTop svg { width: 18px; height: 18px; fill: white; }
+    /* BUTTONS */
+    .btn-container {
+      width: 100%;
+      margin: 25px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      padding: 0;
+    }
+    .btn {
+      background-color: #0056b3;
+      color: white !important;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+      box-shadow: 0 6px 12px rgba(0, 123, 255, 0.2);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      min-width: 220px;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 18px rgba(0, 123, 255, 0.4); }
 
-        .seo-footer { margin-top: 0px; padding-top: 2px; border-top: 1px solid #eee; font-size: 0.85rem; color: #fff; text-align: left; background-color:#191970;}
-    
-        /* HAMBURGER MENU */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-        }
+    /* LIGHTBOX */
+    #lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(25, 25, 112, 0.95); display: none; align-items: center; justify-content: center; z-index: 2000; }
+    #lightbox img { max-width: 90%; max-height: 80%; border: 4px solid var(--sky); }
 
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: var(--navy);
-        }
+    /* BACK TO TOP */
+    #backToTop {
+      position: fixed; bottom: 20px; right: 15px; width: 35px; height: 35px;
+      background: rgba(0, 123, 255, 0.6); color: white; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 1000; opacity: 0; visibility: hidden; transition: 0.3s; border: none; cursor: pointer;
+    }
+    #backToTop.show { opacity: 1; visibility: visible; }
+    #backToTop svg { width: 18px; height: 18px; fill: white; }
 
-        @media (max-width: 1024px) {
-            .content-wrapper { width: 100%; margin: 0; box-shadow: none; }
-        }
+    .seo-footer { margin-top: 0px; padding-top: 2px; border-top: 1px solid #eee; font-size: 0.85rem; color: #fff; text-align: left; background-color: var(--navy); }
 
-        @media (max-width: 768px) {
-            .nav-links {
-                position: absolute;
-                top: 60px;
-                right: 0;
-                background: var(--sky);
-                flex-direction: column;
-                width: 200px;
-                padding: 15px;
-                display: none;
-            }
+    /* RESPONSIVE BREAKPOINTS */
+    /* Tablet and down */
+    @media (max-width: 1024px) {
+      .content-wrapper { width: 100%; margin: 0; box-shadow: none; }
+      .hero-overlay { width: 85%; }
+      body { background-attachment: scroll; }
 
-            .nav-links a {
-                margin: 10px 0;
-            }
+      /* Switch to hamburger on tablet/phone */
+      .hamburger { display: inline-flex; }
+      .nav-links { display: none; }
 
-            .nav-links.active {
-                display: flex;
-            }
+      .nav-bar { position: sticky; top: 0; }
 
-            .hamburger {
-                display: flex;
-            }
-        }
 
-        @media (max-width: 480px) {
-            .hero-overlay {
-                width: 95%;
-            }
 
-            .hero-overlay h1 {
-                font-size: 1.6rem;
-            }
 
-            .hero-overlay p {
-                font-size: 0.9rem;
-            }
-        }
 
-    </style>
+
+
+
+
+
+
+
+
+
+
+      /* Open state for mobile menu */
+      .nav-links.open {
+        display: flex;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        background: var(--sky);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px 5%;
+        gap: 10px;
+        border-bottom: 2px solid var(--navy);
+      }
+      .nav-links.open a { font-size: 0.95rem; }
+    }
+
+    /* Phone */
+    @media (max-width: 480px) {
+      .hero-container { height: 62vh; }
+      .hero-overlay { width: 92%; padding: 10px 12px; }
+      .hero-overlay h1 { font-size: 1.7rem; }
+      .hero-overlay p { font-size: 0.95rem; }
+
+      .section { padding: 40px 5%; }
+      h2 { font-size: 1.6rem; }
+
+      .gallery { grid-template-columns: 1fr; }
+      .gallery img { height: 210px; }
+
+      .btn { width: min(92%, 360px); min-width: 0; }
+    }
+</style>
 </head>
 
 <body>
@@ -358,14 +411,12 @@
         <h2>Aerial View of house and surrounging area.</h2>
         <div class="gallery">
             <div class="gallery-item"><img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204220829052023000000-o.jpg" onclick="openLightbox(this.src)" loading="lazy" alt="Roatan Ridge Aerial"><div class="caption">Roatan Ridge Aerial</div></div>
-            <div class="gallery-item"><img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204220829052023000000-o.jpg" onclick="openLightbox(this.src)" loading="lazy" alt="Pin Drop 1"><div class="caption">Pin Drop 1</div></div>
-            <div class="gallery-item"><img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204220829565303000000-o.jpg" onclick="openLightbox(this.src)" loading="lazy" alt="Pin Drop 2"><div class="caption">Pin Drop 2</div></div>
-            <div class="gallery-item"><img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260206215312335277000000-o.jpg" onclick="openLightbox(this.src)" loading="lazy" alt="Pin Drop 3 (Solar)"><div class="caption">Pin Drop 3 (Solar)</div></div>
-            <div class="gallery-item"><img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202542177711000000-o.jpg" onclick="openLightbox(this.src)" loading="lazy" alt="Sunset Villas"><div class="caption">Sunset Villas</div></div>
+            
+            <div class="gallery-item"><img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204220829565303000000-o.jpg" onclick="openLightbox(this.src)" loading="lazy" alt="Pin Drop 2"><div class="caption">Pin Drop 1</div></div>
+            <div class="gallery-item"><img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260206215312335277000000-o.jpg" onclick="openLightbox(this.src)" loading="lazy" alt="Pin Drop 3 (Solar)"><div class="caption">Pin Drop 2 (Solar)</div></div>
+            <div class="gallery-item"><img src="https://www.roatanrealestategroup.com/wp-content/uploads/Sunset-Villas-Aerial-1.jpg" onclick="openLightbox(this.src)" loading="lazy" alt="Sunset Villas"><div class="caption">Sunset Villas</div></div>
             <div class="gallery-item"><img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260204202542888451000000-o.jpg" onclick="openLightbox(this.src)" loading="lazy" alt="Overlooking West Bay & Utila"><div class="caption">Overlooking West Bay & Utila</div></div>
-            <div class="gallery-item"><img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260206211212360144000000-o.jpg" onclick="openLightbox(this.src)" loading="lazy" alt="Sunset Panorama"><div class="caption">Sunset Panorama</div></div>
-
-            <div class="gallery-item"><img src="https://cdn.resize.sparkplatform.com/rra/1280x1024/true/20260206211202798822000000-o.jpg" onclick="openLightbox(this.src)" loading="lazy" alt="Ocean View West"><div class="caption">Ocean View West</div></div>
+            
             <div class="gallery-item"><img src="https://images.squarespace-cdn.com/content/v1/5e59cc476fe14d05ec2257fe/1585117603915-T9SL3B84ZGMQJ3B0BZSD/4A35E7AF-D1F0-4250-8710-4F26F5EE9B15.JPG" onclick="openLightbox(this.src)" loading="lazy" alt="Sunset Panorama"><div class="caption">West End</div></div>
         </div>
     </div>
@@ -454,11 +505,7 @@
 
     </div>
 </div>
-      <div class="btn-container">
-            <a href="https://my.flexmls.com/ASRealEstate/search/shared_links/DPFVK/listings/20260204164718198105000000" class="btn">VIEW FULL MLS LISTING</a>
-            <a href="mailto:dreampropertiesroatan@gmail.com?subject=Inquiry: Vista Azul Roatan" class="btn">CONTACT AGENT</a>
-        </div> 
-        
+     
 
     
     <div style="background: var(--navy); color: white; text-align: center; padding: 2px 5%;">
@@ -504,10 +551,35 @@
 
 </div>
 
+
 <script>
-function toggleMenu() {
-    document.querySelector('.nav-links').classList.toggle('active');
-}
+  // Mobile navigation toggle
+  function toggleMenu() {
+    var links = document.querySelector('.nav-links');
+    if (!links) return;
+    links.classList.toggle('open');
+  }
+
+  // Close menu after tapping a link (mobile)
+  document.addEventListener('DOMContentLoaded', function() {
+    var linksWrap = document.querySelector('.nav-links');
+    if (!linksWrap) return;
+
+    linksWrap.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        linksWrap.classList.remove('open');
+      });
+    });
+
+    // Close when clicking outside the nav area
+    document.addEventListener('click', function(e) {
+      var nav = document.querySelector('.nav-bar');
+      if (!nav || !linksWrap.classList.contains('open')) return;
+      if (!nav.contains(e.target)) {
+        linksWrap.classList.remove('open');
+      }
+    });
+  });
 </script>
 
 </body>
